@@ -32,4 +32,11 @@ To analyse which is the best all methods have been tested on a public dataset av
 
 ## Clinical-Radiomics Approaches
 For pipelines combining radiomic and clinical features, we have analysed all combinations of model and set inputs.
-![Clincal-Radiomics Approaches](README_imgs\scheme1.png)
+<p align="center">
+  <img src="https://github.com/PietroMarvulli/TACE/blob/main/README_imgs/scheme1.png" alt="Clinical-Radiomics Approaches" width="350"/>
+</p>
+<p align="center"><b>Figura 1:</b> Clinical-Radiomics Approaches</p>
+
+## Deep and Mixed Aprroaches
+As for the methods that integrate feature extraction or deep learning model training, we chose to replicate the most representative works and which had more information on parameters and implementation.
+In particular, the work of [Peng et al.](https://doi.org/10.1007/s00330-019-06318-1), [Ren et al.](https://doi.org/10.3389/fbioe.2022.872044), [Sun et al.](https://doi.org/10.2147/JHC.S443660) and [Wang et al.](https://doi.org/10.1016/j.ejrad.2022.110527)
