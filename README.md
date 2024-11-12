@@ -39,4 +39,13 @@ For pipelines combining radiomic and clinical features, we have analysed all com
 
 ## Deep and Mixed Aprroaches
 As for the methods that integrate feature extraction or deep learning model training, we chose to replicate the most representative works and which had more information on parameters and implementation.
-In particular, the work of [Peng et al.](https://doi.org/10.1007/s00330-019-06318-1), [Ren et al.](https://doi.org/10.3389/fbioe.2022.872044), [Sun et al.](https://doi.org/10.2147/JHC.S443660) and [Wang et al.](https://doi.org/10.1016/j.ejrad.2022.110527)
+In particular, the work of [Peng et al.](https://doi.org/10.1007/s00330-019-06318-1), [Ren et al.](https://doi.org/10.3389/fbioe.2022.872044), [Sun et al.](https://doi.org/10.2147/JHC.S443660) and [Wang et al.](https://doi.org/10.1016/j.ejrad.2022.110527). 
+
+| Pipeline 1: Deep Pipeline used by [Peng et al.](https://doi.org/10.1007/s00330-019-06318-1) | Pipeline 2: Deep Pipeline used by [Ren et al.](https://doi.org/10.3389/fbioe.2022.872044)|
+|:--------------------------:|:--------------------------:|
+| ![Deep Pipeline 1](https://github.com/PietroMarvulli/TACE/blob/main/README_imgs/deep_pipeline1.png) | ![Deep Pipeline 2](https://github.com/PietroMarvulli/TACE/blob/main/README_imgs/deep_pipeline2.png) |
+
+| Pipeline 3: Deep Pipeline used by [Wang et al.](https://doi.org/10.1016/j.ejrad.2022.110527) | Pipeline 4: Mixed Pipeline used by [Sun et al.](https://doi.org/10.2147/JHC.S443660)  |
+|:--------------------------:|:------------------------:|
+| ![Deep Pipeline 3](https://github.com/PietroMarvulli/TACE/blob/main/README_imgs/deep_pipeline3.png) | ![Mixed Pipeline](https://github.com/PietroMarvulli/TACE/blob/main/README_imgs/mixed_pipeline.png) |
+
