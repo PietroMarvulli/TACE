@@ -32,3 +32,4 @@ To analyse which is the best all methods have been tested on a public dataset av
 
 ## Clinical-Radiomics Approaches
 For pipelines combining radiomic and clinical features, we have analysed all combinations of model and set inputs.
+![Clincal-Radiomics Approaches](README_imgs\scheme1.png)
