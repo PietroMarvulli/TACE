@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import os
 from pandas.core.common import SettingWithCopyWarning
 import warnings
 from tqdm import tqdm
@@ -16,6 +17,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import accuracy_score, make_scorer
 from sklearn.model_selection import StratifiedKFold
+from openpyxl import load_workbook
 
 def load_image(nifti_path):
     image = sitk.ReadImage(nifti_path)
@@ -219,6 +221,11 @@ if __name__ == "__main__":
     radiomics_features = pd.read_csv("file/Ren/Radiomics.csv")
     deep_features = pd.read_csv("file/Ren/Deeps.csv")
 
+    file_path = "index_control.xlsx"
+    wb = load_workbook(file_path)
+    ws = wb.active
+    ws['C1'] = str(os.path.basename(__file__))
+
     cv = True
 
     if cv:
@@ -227,6 +234,9 @@ if __name__ == "__main__":
         fold_test_acc = []
 
         for fold, (train_index, test_index) in tqdm(enumerate(skf.split(clinical_data, target)), total=skf.get_n_splits(),desc="Processing folds"):
+            for i in range(len(train_index)):
+                ws[f'C{i + 2}'] = train_index[i]
+            wb.save(file_path)
             train_clinical = clinical_data.iloc[train_index]
             train_deep = deep_features.iloc[train_index]
             train_radiomics = radiomics_features.iloc[train_index]

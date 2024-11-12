@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import os
 import warnings
 from sklearn.exceptions import ConvergenceWarning
 from tqdm import tqdm
@@ -18,6 +19,7 @@ from sklearn.model_selection import StratifiedKFold, GridSearchCV
 from sklearn.metrics import accuracy_score
 from pandas.core.common import SettingWithCopyWarning
 from datetime import datetime
+from openpyxl import Workbook
 
 print(datetime.now())
 
@@ -237,6 +239,11 @@ if __name__ == "__main__":
     target = clinical_data['target'].values
     cv = True
     #
+    wb = Workbook()
+    ws = wb.active
+    ws['A1'] = str(os.path.basename(__file__))
+    #
+
     if cv:
         print("\nStart Analysis in Cross-Validation: ")
         skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
@@ -278,7 +285,9 @@ if __name__ == "__main__":
             train_clinical = clinical_data.iloc[train_index]
             train_radiomics = radiomics_features.iloc[train_index]
             train_target = train_clinical['target'].values
-
+            for i in range(len(train_index)):
+                ws[f'A{i+2}'] = train_index[i]
+            wb.save("index_control.xlsx")
             train_clinical = clinical_analysis(train_clinical)
             train_clinical = train_clinical.drop(columns=['target'])
 

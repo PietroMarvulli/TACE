@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+from openpyxl import load_workbook
+import os
 from tqdm import tqdm
 import cv2
 import numpy as np
@@ -228,12 +230,21 @@ if __name__ == "__main__":
 
     skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
+    file_path = "index_control.xlsx"
+    wb = load_workbook(file_path)
+    ws = wb.active
+    ws['B1'] = str(os.path.basename(__file__))
+
     fold_accuracies = []
     fold_losses = []
     test_accuracies = []
     test_losses = []
 
     for fold, (train_val_index, test_index) in enumerate(skf.split(image_paths, labels)):
+
+        for i in range(len(train_val_index)):
+            ws[f'B{i + 2}'] = train_val_index[i]
+        wb.save(file_path)
 
         train_val_image_paths = [image_paths[i] for i in train_val_index]
         train_val_mask_paths = [mask_paths[i] for i in train_val_index]
