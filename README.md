@@ -33,7 +33,7 @@ To analyse which is the best all methods have been tested on a public dataset av
 ## Clinical-Radiomics Approaches
 For pipelines combining radiomic and clinical features, we have analysed all combinations of model and set inputs.
 <p align="center">
-  <img src="https://github.com/PietroMarvulli/TACE/blob/main/README_imgs/scheme1.png" alt="Clinical-Radiomics Approaches" width="350"/>
+  <img src="https://github.com/PietroMarvulli/TACE/blob/main/README_imgs/comb.png" alt="Clinical-Radiomics Approaches" width="350"/>
 </p>
 <p align="center"><b>Figura 1:</b> Clinical-Radiomics Approaches</p>
 
